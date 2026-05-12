@@ -315,6 +315,7 @@ Tags must be exactly one of: peanut, cotton, cattle, corn, soy, macro, policy, p
     renderCards(parseSection(pricesText, 'cards'));
 
     document.getElementById('status-bar').textContent = 'Loading market intelligence news…';
+    await new Promise(r => setTimeout(r, 3000));
     const newsText = await callAPI(systemPrompt, newsPrompt);
     renderNews(parseSection(newsText, 'news'));
 
