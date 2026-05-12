@@ -27,7 +27,6 @@ headers: {
 body: JSON.stringify(req.body)
 });
 
-```
 const data = await response.json();
 
 if (!response.ok) {
@@ -35,7 +34,7 @@ if (!response.ok) {
 }
 
 return res.status(200).json(data);
-```
+
 
 } catch (err) {
 return res.status(500).json({ error: err.message });
