@@ -219,11 +219,37 @@
   </div>
 
   <div class="section-label">Market intelligence</div>
-  <div id="news-list" class="news-list">
-    <div class="news-item" style="cursor:default;">
-      <div></div>
-      <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--cream3);">Press Refresh to load latest news…</div>
-    </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:2.5rem;">
+    <a href="https://www.brownfieldagnews.com" target="_blank" style="background:var(--bg2);padding:1rem 1.4rem;text-decoration:none;transition:background 0.12s;display:block;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
+      <div style="font-size:0.6rem;font-family:var(--font-mono);color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Daily News</div>
+      <div style="font-size:0.88rem;font-weight:500;color:var(--cream);">Brownfield Ag News ↗</div>
+      <div style="font-size:0.75rem;color:var(--cream3);margin-top:2px;">Markets, futures, farm policy</div>
+    </a>
+    <a href="https://www.farmprogress.com" target="_blank" style="background:var(--bg2);padding:1rem 1.4rem;text-decoration:none;transition:background 0.12s;display:block;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
+      <div style="font-size:0.6rem;font-family:var(--font-mono);color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Trade News</div>
+      <div style="font-size:0.88rem;font-weight:500;color:var(--cream);">Farm Progress ↗</div>
+      <div style="font-size:0.75rem;color:var(--cream3);margin-top:2px;">Crop news, input costs, outlook</div>
+    </a>
+    <a href="https://www.gfb.org/news/ag-news.html" target="_blank" style="background:var(--bg2);padding:1rem 1.4rem;text-decoration:none;transition:background 0.12s;display:block;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
+      <div style="font-size:0.6rem;font-family:var(--font-mono);color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Georgia Focus</div>
+      <div style="font-size:0.88rem;font-weight:500;color:var(--cream);">GA Farm Bureau ↗</div>
+      <div style="font-size:0.75rem;color:var(--cream3);margin-top:2px;">Local policy, Georgia crop news</div>
+    </a>
+    <a href="https://www.dtnpf.com/agriculture/web/ag/news" target="_blank" style="background:var(--bg2);padding:1rem 1.4rem;text-decoration:none;transition:background 0.12s;display:block;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
+      <div style="font-size:0.6rem;font-family:var(--font-mono);color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Market News</div>
+      <div style="font-size:0.88rem;font-weight:500;color:var(--cream);">DTN Progressive Farmer ↗</div>
+      <div style="font-size:0.75rem;color:var(--cream3);margin-top:2px;">Commodity analysis, weather</div>
+    </a>
+    <a href="https://www.agweb.com/news" target="_blank" style="background:var(--bg2);padding:1rem 1.4rem;text-decoration:none;transition:background 0.12s;display:block;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
+      <div style="font-size:0.6rem;font-family:var(--font-mono);color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Ag News</div>
+      <div style="font-size:0.88rem;font-weight:500;color:var(--cream);">AgWeb ↗</div>
+      <div style="font-size:0.75rem;color:var(--cream3);margin-top:2px;">Production ag, markets, policy</div>
+    </a>
+    <a href="https://www.usda.gov/media/blog" target="_blank" style="background:var(--bg2);padding:1rem 1.4rem;text-decoration:none;transition:background 0.12s;display:block;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
+      <div style="font-size:0.6rem;font-family:var(--font-mono);color:var(--amber);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">USDA</div>
+      <div style="font-size:0.88rem;font-weight:500;color:var(--cream);">USDA News ↗</div>
+      <div style="font-size:0.75rem;color:var(--cream3);margin-top:2px;">Reports, programs, policy updates</div>
+    </a>
   </div>
 
   <div class="section-label">Key sources</div>
@@ -295,30 +321,13 @@ CORN|[bull/bear/neutral]|[price]|/bu|[1 sentence price trend]|[2-3 sentences mar
 SOYBEANS|[bull/bear/neutral]|[price]|/bu|[1 sentence price trend]|[2-3 sentences market fundamentals]
 </cards>`;
 
-  const newsPrompt = `Search for the top 6 agricultural news stories today. Return in this exact XML format only, no other text:
 
-<news>
-[TAG]|[Headline under 12 words]|[2-3 sentence summary for South Georgia ag lender]
-[TAG]|[Headline]|[Summary]
-[TAG]|[Headline]|[Summary]
-[TAG]|[Headline]|[Summary]
-[TAG]|[Headline]|[Summary]
-[TAG]|[Headline]|[Summary]
-</news>
-
-Tags must be exactly one of: peanut, cotton, cattle, corn, soy, macro, policy, poultry`;
 
   try {
     document.getElementById('status-bar').textContent = 'Loading prices and sector data…';
     const pricesText = await callAPI(systemPrompt, pricesPrompt);
     renderTicker(parseSection(pricesText, 'ticker'));
     renderCards(parseSection(pricesText, 'cards'));
-
-    document.getElementById('status-bar').textContent = 'Loading market intelligence news…';
-    await new Promise(r => setTimeout(r, 3000));
-    const newsText = await callAPI(systemPrompt, newsPrompt);
-    renderNews(parseSection(newsText, 'news'));
-
     document.getElementById('status-bar').textContent = `Last refreshed: ${new Date().toLocaleString('en-US')}`;
   } catch (e) {
     document.getElementById('status-bar').textContent = `Error: ${e.message}`;
