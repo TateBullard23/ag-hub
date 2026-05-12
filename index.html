@@ -41,10 +41,8 @@ min-height: 100vh;
 line-height: 1.6;
 }
 
-/* Layout */
 .shell { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
 
-/* Header */
 header {
 border-bottom: 1px solid var(–border2);
 padding: 1.75rem 0 1.5rem;
@@ -65,26 +63,10 @@ display: flex;
 align-items: center;
 gap: 0.6rem;
 }
-.wordmark-dot {
-width: 8px; height: 8px;
-background: var(–amber);
-border-radius: 50%;
-display: inline-block;
-flex-shrink: 0;
-}
-.header-sub {
-font-size: 0.7rem;
-font-family: var(–font-mono);
-color: var(–cream3);
-letter-spacing: 0.08em;
-text-transform: uppercase;
-}
+.wordmark-dot { width: 8px; height: 8px; background: var(–amber); border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.header-sub { font-size: 0.7rem; font-family: var(–font-mono); color: var(–cream3); letter-spacing: 0.08em; text-transform: uppercase; }
 .header-right { display: flex; align-items: center; gap: 1rem; }
-#timestamp {
-font-family: var(–font-mono);
-font-size: 0.7rem;
-color: var(–cream3);
-}
+#timestamp { font-family: var(–font-mono); font-size: 0.7rem; color: var(–cream3); }
 #refresh-btn {
 background: var(–amber-dim);
 color: var(–amber2);
@@ -105,7 +87,6 @@ gap: 0.5rem;
 .spin { animation: spin 1s linear infinite; display: inline-block; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Ticker strip */
 #ticker-bar {
 background: var(–bg2);
 border: 1px solid var(–border);
@@ -126,7 +107,6 @@ min-height: 48px;
 .neg { color: var(–red); }
 .neu { color: var(–cream3); }
 
-/* Section labels */
 .section-label {
 font-family: var(–font-mono);
 font-size: 0.65rem;
@@ -138,22 +118,10 @@ display: flex;
 align-items: center;
 gap: 0.5rem;
 }
-.section-label::after {
-content: ‘’;
-flex: 1;
-height: 1px;
-background: var(–border);
-}
+.section-label::after { content: ‘’; flex: 1; height: 1px; background: var(–border); }
 
-/* Cards grid */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(–border); border: 1px solid var(–border); border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem; }
-.card {
-background: var(–bg2);
-padding: 1.25rem 1.4rem;
-cursor: pointer;
-transition: background 0.12s;
-position: relative;
-}
+.card { background: var(–bg2); padding: 1.25rem 1.4rem; cursor: pointer; transition: background 0.12s; position: relative; }
 .card:hover { background: var(–bg3); }
 .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; }
 .card-commodity { font-size: 0.7rem; font-family: var(–font-mono); color: var(–cream3); text-transform: uppercase; letter-spacing: 0.07em; }
@@ -168,18 +136,8 @@ position: relative;
 .card.expanded .card-summary { display: block; }
 .expand-hint { font-size: 0.6rem; font-family: var(–font-mono); color: var(–cream3); position: absolute; bottom: 0.6rem; right: 0.9rem; opacity: 0.5; }
 
-/* News */
 .news-list { display: flex; flex-direction: column; gap: 1px; background: var(–border); border: 1px solid var(–border); border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem; }
-.news-item {
-background: var(–bg2);
-padding: 1rem 1.4rem;
-display: grid;
-grid-template-columns: auto 1fr;
-gap: 0 1.1rem;
-align-items: start;
-transition: background 0.12s;
-cursor: pointer;
-}
+.news-item { background: var(–bg2); padding: 1rem 1.4rem; display: grid; grid-template-columns: auto 1fr; gap: 0 1.1rem; align-items: start; transition: background 0.12s; cursor: pointer; }
 .news-item:hover { background: var(–bg3); }
 .news-tag { font-size: 0.6rem; font-family: var(–font-mono); text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 3px; white-space: nowrap; margin-top: 2px; }
 .tag-peanut { background: #2d2010; color: #c9863a; }
@@ -190,114 +148,26 @@ cursor: pointer;
 .tag-macro { background: var(–bg4); color: var(–cream3); }
 .tag-policy { background: #1a102d; color: #9060c9; }
 .tag-poultry { background: #2d1a10; color: #c97040; }
-.news-content { }
 .news-headline { font-size: 0.88rem; font-weight: 500; color: var(–cream); line-height: 1.4; margin-bottom: 0.3rem; }
 .news-body { font-size: 0.78rem; color: var(–cream2); line-height: 1.55; display: none; margin-top: 0.5rem; }
 .news-item.expanded .news-body { display: block; }
 
-/* Deep dive */
-.deep-dive-bar {
-background: var(–bg2);
-border: 1px solid var(–border2);
-border-radius: 8px;
-padding: 1.1rem 1.4rem;
-margin-bottom: 2.5rem;
-display: flex;
-gap: 0.75rem;
-align-items: center;
-flex-wrap: wrap;
-}
+.deep-dive-bar { background: var(–bg2); border: 1px solid var(–border2); border-radius: 8px; padding: 1.1rem 1.4rem; margin-bottom: 2.5rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
 .dive-label { font-size: 0.7rem; font-family: var(–font-mono); color: var(–cream3); white-space: nowrap; }
-.dive-btn {
-background: var(–bg3);
-border: 1px solid var(–border2);
-color: var(–cream2);
-border-radius: 4px;
-padding: 0.4rem 0.9rem;
-font-family: var(–font-mono);
-font-size: 0.7rem;
-cursor: pointer;
-transition: all 0.12s;
-letter-spacing: 0.03em;
-}
+.dive-btn { background: var(–bg3); border: 1px solid var(–border2); color: var(–cream2); border-radius: 4px; padding: 0.4rem 0.9rem; font-family: var(–font-mono); font-size: 0.7rem; cursor: pointer; transition: all 0.12s; letter-spacing: 0.03em; }
 .dive-btn:hover { background: var(–amber-dim); color: var(–amber2); border-color: var(–amber); }
 
-/* Deep dive response */
-#dive-output {
-background: var(–bg2);
-border: 1px solid var(–border2);
-border-radius: 8px;
-padding: 1.4rem;
-margin-bottom: 2.5rem;
-display: none;
-}
+#dive-output { background: var(–bg2); border: 1px solid var(–border2); border-radius: 8px; padding: 1.4rem; margin-bottom: 2.5rem; display: none; }
 #dive-output.visible { display: block; }
 #dive-title { font-family: var(–font-display); font-size: 1rem; color: var(–amber2); margin-bottom: 0.75rem; }
 #dive-content { font-size: 0.82rem; color: var(–cream2); line-height: 1.7; white-space: pre-wrap; }
 
-/* Loading skeleton */
-.skeleton {
-background: linear-gradient(90deg, var(–bg3) 25%, var(–bg4) 50%, var(–bg3) 75%);
-background-size: 200% 100%;
-animation: shimmer 1.4s infinite;
-border-radius: 4px;
-height: 1em;
-}
-@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-
-/* Status */
 #status-bar { font-family: var(–font-mono); font-size: 0.68rem; color: var(–cream3); margin-bottom: 1.5rem; min-height: 1.2em; }
 
-/* Links */
 .links-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
-.ext-link {
-font-family: var(–font-mono);
-font-size: 0.68rem;
-color: var(–cream3);
-border: 1px solid var(–border2);
-border-radius: 4px;
-padding: 0.35rem 0.8rem;
-text-decoration: none;
-letter-spacing: 0.04em;
-transition: all 0.12s;
-}
+.ext-link { font-family: var(–font-mono); font-size: 0.68rem; color: var(–cream3); border: 1px solid var(–border2); border-radius: 4px; padding: 0.35rem 0.8rem; text-decoration: none; letter-spacing: 0.04em; transition: all 0.12s; }
 .ext-link:hover { color: var(–amber2); border-color: var(–amber); background: var(–amber-dim); }
 
-/* Config panel */
-#config-bar {
-border-top: 1px solid var(–border);
-padding-top: 1.5rem;
-margin-top: 1rem;
-}
-.config-label { font-family: var(–font-mono); font-size: 0.65rem; color: var(–cream3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
-#api-key-input {
-background: var(–bg3);
-border: 1px solid var(–border2);
-color: var(–cream);
-border-radius: 4px;
-padding: 0.5rem 0.8rem;
-font-family: var(–font-mono);
-font-size: 0.72rem;
-width: 360px;
-max-width: 100%;
-}
-#api-key-input:focus { outline: none; border-color: var(–amber); }
-#save-key-btn {
-background: var(–bg4);
-border: 1px solid var(–border2);
-color: var(–cream2);
-border-radius: 4px;
-padding: 0.5rem 1rem;
-font-family: var(–font-mono);
-font-size: 0.72rem;
-cursor: pointer;
-margin-left: 0.5rem;
-transition: all 0.12s;
-}
-#save-key-btn:hover { background: var(–amber-dim); color: var(–amber2); border-color: var(–amber); }
-.key-note { font-size: 0.65rem; color: var(–cream3); margin-top: 0.4rem; font-family: var(–font-mono); }
-
-/* Fade-in on load */
 .fade-in { animation: fadeIn 0.4s ease forwards; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 </style>
@@ -319,23 +189,17 @@ transition: all 0.12s;
 
   <div id="status-bar">Ready — press Refresh to pull live data.</div>
 
-  <!-- Ticker -->
-
   <div class="section-label">Live futures</div>
   <div id="ticker-bar">
     <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--cream3);">Press Refresh to load commodity prices →</div>
   </div>
 
-  <!-- Commodity cards -->
-
   <div class="section-label" style="margin-top:1.5rem;">Sector snapshot</div>
   <div id="cards-grid" class="cards">
     <div class="card" style="cursor:default;">
-      <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--cream3);padding:1rem 0;">Loading sectors…</div>
+      <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--cream3);padding:1rem 0;">Press Refresh to load sectors…</div>
     </div>
   </div>
-
-  <!-- Deep dive -->
 
   <div class="section-label">Deep dive</div>
   <div class="deep-dive-bar">
@@ -355,8 +219,6 @@ transition: all 0.12s;
     <div id="dive-content"></div>
   </div>
 
-  <!-- News feed -->
-
   <div class="section-label">Market intelligence</div>
   <div id="news-list" class="news-list">
     <div class="news-item" style="cursor:default;">
@@ -364,8 +226,6 @@ transition: all 0.12s;
       <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--cream3);">Press Refresh to load latest news…</div>
     </div>
   </div>
-
-  <!-- Quick links -->
 
   <div class="section-label">Key sources</div>
   <div class="links-row">
@@ -380,45 +240,13 @@ transition: all 0.12s;
     <a class="ext-link" href="https://apps.ams.usda.gov/mnreports/ams_3046.pdf" target="_blank">USDA Daily Grain ↗</a>
   </div>
 
-  <!-- Config -->
-
-  <div id="config-bar">
-    <div class="config-label">Anthropic API Key</div>
-    <input type="password" id="api-key-input" placeholder="sk-ant-api03-…" />
-    <button id="save-key-btn" onclick="saveKey()">Save</button>
-    <div class="key-note">Stored in localStorage only. Never sent anywhere except api.anthropic.com. Get yours at console.anthropic.com.</div>
-  </div>
-
 </div>
 
 <script>
-// ─── API Key ───────────────────────────────────────────────────────────────
-function getKey() { return localStorage.getItem('ag_hub_api_key') || ''; }
-function saveKey() {
-  const k = document.getElementById('api-key-input').value.trim();
-  if (!k) return;
-  localStorage.setItem('ag_hub_api_key', k);
-  document.getElementById('api-key-input').value = '';
-  document.getElementById('api-key-input').placeholder = 'Key saved ✓';
-  setTimeout(() => document.getElementById('api-key-input').placeholder = 'sk-ant-api03-…', 2000);
-}
-window.addEventListener('DOMContentLoaded', () => {
-  if (getKey()) document.getElementById('api-key-input').placeholder = 'Key saved ✓ (click to replace)';
-});
-
-// ─── Claude API call ────────────────────────────────────────────────────────
-async function callClaude(systemPrompt, userPrompt) {
-  const key = getKey();
-  if (!key) throw new Error('No API key. Enter your Anthropic API key in the Config section below.');
-
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
+async function callAPI(systemPrompt, userPrompt) {
+  const res = await fetch('/api/chat', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': key,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-calls': 'true'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       model: 'claude-sonnet-4-20250514',
       max_tokens: 2000,
@@ -433,54 +261,43 @@ async function callClaude(systemPrompt, userPrompt) {
     throw new Error(err.error?.message || `API error ${res.status}`);
   }
   const data = await res.json();
-  return data.content
-    .filter(b => b.type === 'text')
-    .map(b => b.text)
-    .join('\n');
+  return data.content.filter(b => b.type === 'text').map(b => b.text).join('\n');
 }
 
-// ─── Parse structured response ──────────────────────────────────────────────
 function parseSection(text, tag) {
   const re = new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`, 'i');
   const m = text.match(re);
   return m ? m[1].trim() : '';
 }
 
-// ─── Refresh ────────────────────────────────────────────────────────────────
 async function runRefresh() {
   const btn = document.getElementById('refresh-btn');
   btn.disabled = true;
   btn.innerHTML = '<span class="spin">↻</span> Fetching…';
+  document.getElementById('status-bar').textContent = 'Searching live commodity data…';
+  document.getElementById('timestamp').textContent = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
-  const status = document.getElementById('status-bar');
-  status.textContent = 'Searching live commodity data…';
+  const today = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
-  const today = new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-  document.getElementById('timestamp').textContent = new Date().toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
+  const systemPrompt = `You are an agricultural markets analyst for a South Georgia ag lender at Renasant Bank. Today is ${today}. Search for current live data. Return responses in the exact XML structure requested. Territory covers: Tift, Worth, Dougherty, Lee, Cook, Lowndes, Turner, Crisp, Echols, Berrien, Irwin, Ben Hill, Telfair, Wilcox, Coffee, Atkinson, and Ware counties in Georgia. Key commodities: peanuts, cotton, corn, soybeans, cattle, broiler poultry, timber.`;
 
-  const systemPrompt = `You are an agricultural markets analyst assistant for a South Georgia ag lender. 
-Today is ${today}. Search for current, live data. Always return your response in the exact XML structure requested.
-The lender's territory covers: Tift, Worth, Dougherty, Lee, Cook, Lowndes, Turner, Crisp, Echols, Berrien, Irwin, Ben Hill, Telfair, Wilcox, Coffee, Atkinson, and Ware counties in Georgia.
-Key commodities: peanuts, cotton, corn, soybeans, cattle (cow-calf and stocker), broiler poultry, timber.`;
-
-  const userPrompt = `Search for today's current commodity futures prices and top agricultural news. 
-Return your response in this exact XML format, no extra text:
+  const userPrompt = `Search for today's current commodity futures prices and top agricultural news. Return your response in this exact XML format only:
 
 <ticker>
 CORN:[price]/bu [change] | SOYBEANS:[price]/bu [change] | COTTON:[price]c/lb [change] | WHEAT:[price]/bu [change] | LIVE_CATTLE:[price]/cwt [change] | FEEDER_CATTLE:[price]/cwt [change] | PEANUTS:[price]/ton [note] | CRUDE_OIL:[price]/bbl [change]
 </ticker>
 
 <cards>
-PEANUTS|[bull/bear/neutral]|[price or range]|[unit]|[1 sentence on price trend]|[2-3 sentences on market fundamentals relevant to South Georgia growers]
-COTTON|[bull/bear/neutral]|[price]|c/lb|[1 sentence on price trend]|[2-3 sentences on market fundamentals]
-CATTLE|[bull/bear/neutral]|[price]|/cwt|[1 sentence on price trend]|[2-3 sentences on cow-calf market context]
-POULTRY|[bull/bear/neutral]|[status]|broiler|[1 sentence on broiler market]|[2-3 sentences on integrator outlook, Tyson/Pilgrim's context]
-CORN|[bull/bear/neutral]|[price]|/bu|[1 sentence on price trend]|[2-3 sentences on market fundamentals]
-SOYBEANS|[bull/bear/neutral]|[price]|/bu|[1 sentence on price trend]|[2-3 sentences on market fundamentals]
+PEANUTS|[bull/bear/neutral]|[price or range]|[unit]|[1 sentence price trend]|[2-3 sentences market fundamentals for South Georgia]
+COTTON|[bull/bear/neutral]|[price]|c/lb|[1 sentence price trend]|[2-3 sentences market fundamentals]
+CATTLE|[bull/bear/neutral]|[price]|/cwt|[1 sentence price trend]|[2-3 sentences cow-calf context]
+POULTRY|[bull/bear/neutral]|[status]|broiler|[1 sentence broiler market]|[2-3 sentences integrator outlook]
+CORN|[bull/bear/neutral]|[price]|/bu|[1 sentence price trend]|[2-3 sentences market fundamentals]
+SOYBEANS|[bull/bear/neutral]|[price]|/bu|[1 sentence price trend]|[2-3 sentences market fundamentals]
 </cards>
 
 <news>
-[TAG]|[Headline under 12 words]|[2-3 sentence summary relevant to South Georgia ag lender]
+[TAG]|[Headline under 12 words]|[2-3 sentence summary for South Georgia ag lender]
 [TAG]|[Headline]|[Summary]
 [TAG]|[Headline]|[Summary]
 [TAG]|[Headline]|[Summary]
@@ -488,73 +305,52 @@ SOYBEANS|[bull/bear/neutral]|[price]|/bu|[1 sentence on price trend]|[2-3 senten
 [TAG]|[Headline]|[Summary]
 </news>
 
-Tags must be one of: peanut, cotton, cattle, corn, soy, macro, policy, poultry
-Search for real current prices and news before responding.`;
+Tags must be one of: peanut, cotton, cattle, corn, soy, macro, policy, poultry`;
 
   try {
-    const text = await callClaude(systemPrompt, userPrompt);
-
-    // Parse ticker
-    const tickerRaw = parseSection(text, 'ticker');
-    renderTicker(tickerRaw);
-
-    // Parse cards
-    const cardsRaw = parseSection(text, 'cards');
-    renderCards(cardsRaw);
-
-    // Parse news
-    const newsRaw = parseSection(text, 'news');
-    renderNews(newsRaw);
-
-    status.textContent = `Last refreshed: ${new Date().toLocaleString('en-US')}`;
+    const text = await callAPI(systemPrompt, userPrompt);
+    renderTicker(parseSection(text, 'ticker'));
+    renderCards(parseSection(text, 'cards'));
+    renderNews(parseSection(text, 'news'));
+    document.getElementById('status-bar').textContent = `Last refreshed: ${new Date().toLocaleString('en-US')}`;
   } catch (e) {
-    status.textContent = `Error: ${e.message}`;
+    document.getElementById('status-bar').textContent = `Error: ${e.message}`;
   }
 
   btn.disabled = false;
   btn.innerHTML = '↻ Refresh';
 }
 
-// ─── Render Ticker ──────────────────────────────────────────────────────────
 function renderTicker(raw) {
   const bar = document.getElementById('ticker-bar');
   if (!raw) { bar.innerHTML = '<div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--red);">Could not parse ticker data.</div>'; return; }
   const items = raw.split('|').map(s => s.trim()).filter(Boolean);
   bar.innerHTML = items.map(item => {
-    const [label, ...rest] = item.split(':');
-    const val = rest.join(':');
+    const colonIdx = item.indexOf(':');
+    const label = item.substring(0, colonIdx);
+    const val = item.substring(colonIdx + 1);
     const isPos = val.includes('+');
-    const isNeg = val.includes('-') && !val.startsWith('-');
+    const isNeg = val.match(/\s-[0-9]/);
     const chgClass = isPos ? 'pos' : isNeg ? 'neg' : 'neu';
-    const parts = val.split(' ');
+    const parts = val.trim().split(' ');
     const price = parts[0] || '';
     const chg = parts.slice(1).join(' ');
-    return `<div class="ticker-item">
-      <span class="ticker-label">${label.trim()}</span>
-      <span class="ticker-val">${price}</span>
-      <span class="ticker-chg ${chgClass}">${chg}</span>
-    </div>`;
+    return `<div class="ticker-item"><span class="ticker-label">${label.trim()}</span><span class="ticker-val">${price}</span><span class="ticker-chg ${chgClass}">${chg}</span></div>`;
   }).join('');
 }
 
-// ─── Render Cards ───────────────────────────────────────────────────────────
 function renderCards(raw) {
   const grid = document.getElementById('cards-grid');
   if (!raw) { grid.innerHTML = '<div class="card" style="cursor:default;"><div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--red);padding:1rem 0;">Could not load sector data.</div></div>'; return; }
   const lines = raw.split('\n').map(l => l.trim()).filter(l => l.includes('|'));
-  if (!lines.length) { grid.innerHTML = '<div class="card" style="cursor:default;"><div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--red);padding:1rem 0;">No sector data returned.</div></div>'; return; }
-
+  if (!lines.length) return;
   grid.innerHTML = lines.map((line, i) => {
-    const parts = line.split('|');
-    const [commodity, signal, price, unit, trend, detail] = parts;
+    const [commodity, signal, price, unit, trend, detail] = line.split('|');
     const sig = (signal || '').trim().toLowerCase();
     const badgeClass = sig === 'bull' ? 'badge-bull' : sig === 'bear' ? 'badge-bear' : 'badge-neu';
     const badgeLabel = sig === 'bull' ? '▲ Bullish' : sig === 'bear' ? '▼ Bearish' : '◆ Neutral';
-    return `<div class="card" onclick="this.classList.toggle('expanded')" style="animation-delay:${i * 0.05}s">
-      <div class="card-header">
-        <span class="card-commodity">${(commodity||'').trim()}</span>
-        <span class="card-badge ${badgeClass}">${badgeLabel}</span>
-      </div>
+    return `<div class="card" onclick="this.classList.toggle('expanded')">
+      <div class="card-header"><span class="card-commodity">${(commodity||'').trim()}</span><span class="card-badge ${badgeClass}">${badgeLabel}</span></div>
       <div class="card-price">${(price||'—').trim()}<span class="card-unit">${(unit||'').trim()}</span></div>
       <div class="card-change neu">${(trend||'').trim()}</div>
       <div class="card-summary">${(detail||'').trim()}</div>
@@ -563,53 +359,35 @@ function renderCards(raw) {
   }).join('');
 }
 
-// ─── Render News ────────────────────────────────────────────────────────────
 function renderNews(raw) {
   const list = document.getElementById('news-list');
   if (!raw) { list.innerHTML = '<div class="news-item" style="cursor:default;"><div></div><div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--red);">Could not load news.</div></div>'; return; }
   const lines = raw.split('\n').map(l => l.trim()).filter(l => l.includes('|'));
-  if (!lines.length) { list.innerHTML = '<div class="news-item" style="cursor:default;"><div></div><div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--red);">No news returned.</div></div>'; return; }
-
+  if (!lines.length) return;
   list.innerHTML = lines.map(line => {
-    const parts = line.split('|');
-    const [tag, headline, body] = parts;
-    const t = (tag||'macro').trim().toLowerCase();
+    const [tag, headline, body] = line.split('|');
+    const t = (tag || 'macro').trim().toLowerCase();
     return `<div class="news-item" onclick="this.classList.toggle('expanded')">
       <span class="news-tag tag-${t}">${t}</span>
-      <div class="news-content">
-        <div class="news-headline">${(headline||'').trim()}</div>
-        <div class="news-body">${(body||'').trim()}</div>
-      </div>
+      <div class="news-content"><div class="news-headline">${(headline||'').trim()}</div><div class="news-body">${(body||'').trim()}</div></div>
     </div>`;
   }).join('');
 }
 
-// ─── Deep Dive ──────────────────────────────────────────────────────────────
 async function deepDive(topic) {
   const output = document.getElementById('dive-output');
   const title = document.getElementById('dive-title');
   const content = document.getElementById('dive-content');
-
   output.classList.add('visible');
   title.textContent = topic.charAt(0).toUpperCase() + topic.slice(1);
   content.textContent = 'Searching…';
 
-  const today = new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-
-  const systemPrompt = `You are an ag markets analyst for a South Georgia agricultural lender at Renasant Bank. 
-Today is ${today}. Search for current, real data. Write concisely for a banker who knows agriculture deeply — no fluff, just signal. 
-Territory: Tift, Worth, Dougherty, Lee, Cook, Lowndes, Turner, Crisp, Echols, Berrien, Irwin, Ben Hill, Telfair, Wilcox, Coffee, Atkinson, Ware counties, Georgia.`;
-
-  const userPrompt = `Do a focused deep dive on: ${topic}
-Search for current data first. Then write a 250-350 word briefing covering:
-- Current price/market status
-- Key drivers (supply, demand, weather, policy, macro)
-- What this means for South Georgia farmers and lenders specifically
-- Any near-term catalysts or risks to watch
-Write in tight paragraphs. No bullet lists. Banker-grade prose.`;
+  const today = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  const systemPrompt = `You are an ag markets analyst for a South Georgia agricultural lender at Renasant Bank. Today is ${today}. Search for current real data. Write concisely for a banker who knows agriculture deeply. Territory: Tift, Worth, Dougherty, Lee, Cook, Lowndes, Turner, Crisp, Echols, Berrien, Irwin, Ben Hill, Telfair, Wilcox, Coffee, Atkinson, Ware counties, Georgia.`;
+  const userPrompt = `Do a focused deep dive on: ${topic}. Search for current data first. Write a 250-350 word briefing covering: current price/market status, key drivers, what this means for South Georgia farmers and lenders specifically, and near-term catalysts or risks. Tight paragraphs, no bullet lists, banker-grade prose.`;
 
   try {
-    const text = await callClaude(systemPrompt, userPrompt);
+    const text = await callAPI(systemPrompt, userPrompt);
     content.textContent = text;
   } catch (e) {
     content.textContent = `Error: ${e.message}`;
